@@ -1,0 +1,25 @@
+IPTV STUDIO LITE 5.1 — Linux (systemd --user)
+===========================================
+Yêu cầu: Python 3, systemd user session hoạt động, không cần pip hay web.
+
+1. Giải nén ZIP, mở Terminal trong thư mục iptv_studio_lite.
+2. Cài:
+   bash INSTALL_LINUX.sh
+3. Trạng thái lần chạy gần nhất:
+   python3 ~/.local/share/iptv-studio-lite/cli.py status
+   tail -n 40 ~/.iptv_studio/lite/run.log
+4. Lịch systemd đã cài:
+   systemctl --user list-timers vn.iptv.studio.lite.timer
+   systemctl --user status vn.iptv.studio.lite.timer
+5. Thử một lần (không đăng GitHub):
+   python3 ~/.local/share/iptv-studio-lite/cli.py run --no-publish
+6. Đổi lịch rồi nạp lại:
+   python3 ~/.local/share/iptv-studio-lite/cli.py config times 06:45,18:45
+   python3 ~/.local/share/iptv-studio-lite/cli.py reschedule
+7. Tắt lịch:
+   python3 ~/.local/share/iptv-studio-lite/cli.py remove-schedule
+
+Không mở Terminal hoặc popup khi systemd kích hoạt.
+OnCalendar theo giờ máy, Persistent=true hỗ trợ chạy bù sau đăng nhập.
+Nếu muốn chạy khi không đăng nhập, cần systemd lingering (chỉ khi được phép).
+Đường dẫn timer/service: ~/.config/systemd/user/vn.iptv.studio.lite.{timer,service}

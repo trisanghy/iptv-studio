@@ -1,0 +1,14 @@
+HƯỚNG DẪN LINUX — IPTV Studio 5.0
+=================================
+1) Giải nén ZIP, mở Terminal trong thư mục iptv_studio.
+2) Cài Python 3 bằng trình quản lý gói của bản phân phối (nếu thiếu).
+3) Chạy: bash START_LINUX.sh
+4) Mở URL http://127.0.0.1:PORT do Terminal in ra.
+5) Ở giao diện: thêm M3U, chọn 3 vòng kiểm tra, tạo iptv.m3u và CSV.
+6) Mặc định file được xuất vào ~/Downloads, có thể sửa ở bước 2.
+7) Cần cập nhật GitHub thì cài gh CLI và đăng nhập hợp lệ.
+8) Dừng chương trình bằng Ctrl+C.
+
+Muốn bản binary không cần Python: chạy bash build_scripts/BUILD_LINUX.sh
+trên chính bản Linux và kiến trúc CPU sẽ sử dụng; binary dùng PyInstaller,
+không bảo đảm tương thích tất cả glibc hoặc kiến trúc Linux khác nhau.

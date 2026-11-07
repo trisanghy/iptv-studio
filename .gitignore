@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+# Local build artifacts
+build/
+dist/
+*.egg-info/
+*.app/
+*.exe
+*.ipa
+*.zip
+# Sensitive/runtime local data
+.env
+.env.*
+*.token
+*.log
+*.csv
+*.m3u
+*.m3u8
+*.db
+*.sqlite
+*.sqlite3
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+runtime/

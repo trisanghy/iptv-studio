@@ -1,0 +1,12 @@
+ĐÓNG GÓI .APP / .EXE / LINUX EXECUTABLE
+====================================
+Bản ZIP nguồn chạy chung trên Mac/Windows/Linux nếu đã có Python 3.
+Các executable phụ thuộc hệ điều hành; không thể tạo 1 file exe dùng cho cả 3.
+Muốn file độc lập (không cần Python tại máy sử dụng), build trên hệ điều hành đích:
+  macOS:   bash build_scripts/BUILD_MAC_APP.command   -> dist/IPTVStudio.app
+  Windows: build_scripts\BUILD_WINDOWS_EXE.bat         -> dist\IPTVStudio.exe
+  Linux:   bash build_scripts/BUILD_LINUX.sh           -> dist/IPTVStudio
+Các script tạo môi trường venv riêng, cài PyInstaller vào venv và build.
+Yêu cầu Internet để cài PyInstaller khi chưa có; Python3 và pip trên máy build.
+Web UI được đóng gói theo --add-data; server.py hỗ trợ sys._MEIPASS.
+Không có binary Windows/Mac đã ký sẵn bên trong ZIP được tạo trên Linux này.

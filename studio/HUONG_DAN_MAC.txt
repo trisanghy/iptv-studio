@@ -1,0 +1,19 @@
+HƯỚNG DẪN MAC — IPTV Studio 5.0
+================================
+1) Giải nén IPTV_Studio_5_0.zip trong Downloads bằng cách nhấp đúp ZIP.
+2) Vào thư mục iptv_studio, nhấp đúp START_MAC.command.
+3) Nếu macOS chặn, mở Terminal trong thư mục đó và chạy:
+   cd ~/Downloads/iptv_studio && bash START_MAC.command
+4) Nếu thiếu Python3, cài Python cho macOS tại https://www.python.org/downloads/ .
+   Không cần cài Git, Xcode, Homebrew để chỉ lọc và xuất IPTV.
+5) Giao diện trình duyệt tự mở tại http://127.0.0.1:PORT
+6) Bước 1: chọn 2 nguồn mặc định hoặc thêm nguồn khác.
+   Bước 2: bật Kiểm tra sâu, 3 vòng, 8-12 giây, 8 worker (khuyến nghị).
+   Bước 3: Tạo iptv.m3u, xem CSV, thử nhập file vào APTV/M3UHub.
+   Bước 4: chỉ khi cần, dùng gh để cập nhật Gist trên tài khoản đúng.
+7) File mặc định xuất trong ~/Downloads. Để dừng: Ctrl+C ở Terminal.
+
+Nếu muốn file .app không cần Python: chạy build_scripts/BUILD_MAC_APP.command.
+Lệnh này cài PyInstaller trong venv riêng và build tại máy Mac, dùng Internet.
+Không thể dùng bản .app đã build từ máy khác nền tảng; app tự build không ký
+có thể bị Gatekeeper chặn. Hãy build từ mã nguồn đáng tin cậy.

@@ -1,0 +1,16 @@
+IPTV STUDIO 5.0 — NHỮNG THAY ĐỔI
+=================================
+- Kiểm tra 2/3/4 vòng độc lập (mặc định 3), mỗi vòng xác thực HTTP và dữ liệu video.
+- HLS master → HLS media → kiểm tra segment thật MPEG-TS/MP4/AAC.
+- Lỗi HTTP 200 nhưng trả HTML, m3u giả hoặc segment 404 sẽ bị phát hiện.
+- Kiểm tra AES-128 key nếu HLS mã hóa; DRM khác phân loại UNKNOWN.
+- Báo cáo CSV bổ sung cột Vòng kiểm tra, lưu lý do cho từng lần thử.
+- Nếu 2/3 vòng chứng minh video trả dữ liệu: OK; nếu hỏng rõ nhiều lần: FAIL;
+  nếu geo block/timeout: UNKNOWN. Có tùy chọn nghiêm ngặt và ffprobe.
+- Giữ kênh FAIL trong nhóm 99 - KÊNH LỖI ở cuối, không xóa URL.
+- Danh mục thứ 3 nhận dấu giờ Việt Nam: 03 - LIVE EVENTS 🔴 | Kiểm tra: DD/MM/YYYY HH:mm.
+- Xuất iptv.m3u, bản gốc chưa lọc và CSV. Không tự động đăng Gist.
+- Cập nhật giao diện bước 2 và kết quả bước 3, có file hướng dẫn từng nền tảng.
+- Bổ sung script đóng gói .app, .exe, binary bằng PyInstaller trên máy đích.
+- KHÔNG có .app/.exe đã biên dịch sẵn trong ZIP này; bản nguồn chạy đa nền tảng
+  khi có Python 3. Chưa kiểm tra 626 kênh thực tế từ mạng của bạn.

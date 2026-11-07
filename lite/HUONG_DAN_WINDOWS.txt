@@ -1,0 +1,17 @@
+IPTV STUDIO LITE 5.2 - HUONG DAN WINDOWS (KHONG WEB GUI)
+=======================================================
+
+1. Giai nen ZIP, vao thu muc iptv_studio_lite, nhan dup INSTALL_WINDOWS.bat.
+2. Neu thieu Python, bo cai tu tai Python portable 3.13.17 tu python.org,
+   xac minh SHA-256 va cai noi bo, KHONG can quyen admin.
+3. Sau khi cai, pythonw.exe + bo xu ly duoc copy vao:
+   %LOCALAPPDATA%\IPTVStudioLite
+4. Task Scheduler chay nen vao 07:00, 19:00, khong mo CMD/hop thoai.
+5. CHAY_THU_WINDOWS.bat: thu kiem tra, KHONG dang Gist.
+6. XEM_TRANG_THAI_WINDOWS.bat: xem trang thai va log.
+7. TAT_LICH_WINDOWS.bat: tat lich.
+8. CAP_NHAT_LICH_WINDOWS.bat: ap dung lich khi da thay gio.
+
+Mac dinh TU DANG GIST = TAT, tranh anh huong tai khoan GitHub.
+Tu dong cai KHONG can pip vi thu vien chinh la Python standard library.
+Nguon Python: www.python.org/downloads/release/python-31317/

@@ -1,0 +1,14 @@
+NHỮNG ĐIỂM KHÁC SO VỚI IPTV STUDIO GUI 5.0
+- KHÔNG có server.py, thư mục web hay GUI, không mở trình duyệt.
+- Chạy theo lịch do macOS launchd / Windows Task Scheduler / Linux systemd user timer.
+- Một lượt chạy xong thì tự thoát. Không có daemon Python chạy liên tục.
+- Lịch mặc định mỗi ngày 07:00 và 19:00 theo giờ hệ thống, chỉnh được.
+- Không bật cửa sổ Terminal/CMD/hộp thoại khi hệ thống kích hoạt lịch.
+- Dùng chung core.py và advanced_probe.py bản 5.0.
+- Tên file cuối iptv.m3u, có dấu ngày giờ trong danh mục Live Events.
+- Kênh FAIL về cuối KÊNH LỖI; UNKNOWN giữ nguyên.
+- Bảo vệ kết quả khi nhiều lỗi: lưu iptv_can_kiem_tra.m3u thay vì ghi đè bản tốt.
+- Mặc định không tự cập nhật Gist; người dùng bật publish on nếu cần.
+- Luôn PATCH Gist hiện tại, không tự POST mới.
+- Log run.log + trạng thái last_run.json, khóa chống hai lượt chạy trùng.
+- Bản nguồn Python gọn, không phải EXE/APP đã biên dịch; không yêu cầu pip.

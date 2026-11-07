@@ -1,0 +1,30 @@
+IPTV STUDIO LITE 5.1 — macOS (Apple Silicon / Intel)
+===================================================
+Yêu cầu: Python 3; không cần thư viện pip. Các bản macOS hiện đại hỗ trợ launchd.
+
+1. Tải và giải nén IPTV_Studio_Lite_5_1.zip trong Downloads.
+2. Mở Terminal, gõ:
+   cd ~/Downloads/iptv_studio_lite
+   bash INSTALL_MAC.command
+3. Việc cài đặt lập lịch 07:00/19:00 theo giờ máy và sao chép ứng dụng đến
+   ~/.local/share/iptv-studio-lite
+4. Kiểm tra ngay mà chưa đăng GitHub:
+   python3 ~/.local/share/iptv-studio-lite/cli.py run --no-publish
+5. Xem trạng thái và file:
+   python3 ~/.local/share/iptv-studio-lite/cli.py status
+   tail -n 40 ~/.iptv_studio/lite/run.log
+6. Đổi lịch rồi nạp lại launchd:
+   python3 ~/.local/share/iptv-studio-lite/cli.py config times 08:00,20:00
+   python3 ~/.local/share/iptv-studio-lite/cli.py reschedule
+7. Khi đã kiểm tra đúng GitHub CLI, muốn TỰ ĐỘNG cập nhật Gist cũ:
+   gh api user --jq .login
+   python3 ~/.local/share/iptv-studio-lite/cli.py config publish on
+   (Mặc định TẮT, KHÔNG đăng. Không chuyển sang tài khoản bị đình chỉ.)
+8. Tắt lịch nhưng vẫn giữ phần mềm và playlist:
+   python3 ~/.local/share/iptv-studio-lite/cli.py remove-schedule
+
+Tác vụ nằm tại ~/Library/LaunchAgents/vn.iptv.studio.lite.plist.
+launchd gọi Python trực tiếp, không bật Terminal/Finder/Safari hay hộp thoại.
+Không phải một ứng dụng chạy 24/7: chỉ chạy lúc đến lịch rồi thoát.
+Máy ngủ có thể chạy bù khi thức dậy; máy tắt không chạy.
+KHÔNG chạy song song lịch cũ của IPTV Studio v3 nếu trước đây bạn đã bật.

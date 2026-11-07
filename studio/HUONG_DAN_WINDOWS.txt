@@ -1,0 +1,18 @@
+IPTV STUDIO 5.2 - HUONG DAN WINDOWS (TU CAI PYTHON)
+==================================================
+
+BUOC 1: Giai nen ZIP (chuot phai > Extract All) roi mo thu muc iptv_studio.
+BUOC 2: Nhan dup START_WINDOWS.bat.
+   - May da co Python 3.10 tro len: su dung ban san co.
+   - May chua co Python: tu tai Python 3.13.17 portable tu python.org,
+     xac minh SHA-256 roi giai nen noi bo vao runtime\python.
+   - KHONG can admin, KHONG sua PATH, KHONG can pip.
+BUOC 3: Trinh duyet se mo IPTV Studio tren http://127.0.0.1:
+BUOC 4: Nhap/kiem tra playlist, xuat iptv.m3u; chi dang Gist khi da xac nhan.
+
+Dung nhu the nao khi mat mang?
+- Neu Python portable da tai xong, ung dung co the khoi dong offline.
+- Kiem tra kenh va tai playlist van can Internet.
+
+Co loi: Chup man hinh dong LOI KHOI DONG (cua so se dung de ban xem).
+Chu y: ffprobe la cong cu nang cao tuy chon; khong bat buoc de chay app.

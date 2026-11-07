@@ -1,0 +1,78 @@
+IPTV STUDIO LITE 5.1 — CHẠY NỀN KHÔNG WEB GUI
+========================================
+
+MỤC TIÊU
+- Dùng bộ lõi kiểm tra sâu của IPTV Studio 5.0; không mở trình duyệt.
+- Lấy hai nguồn M3U mặc định, hoặc danh sách nguồn đã thiết lập trên bản GUI.
+- Có thể thêm/xóa nguồn riêng cho bản Lite bằng lệnh.
+- Kiểm tra nhiều vòng: HTTP, HLS master/media playlist, lấy mẫu segment thật,
+  tái kiểm tra lỗi tạm thời, kết luận OK/FAIL/UNKNOWN.
+- Gộp theo danh mục: VTV nguồn 1; VTV nguồn 3;
+  03 - LIVE EVENTS 🔴 | Kiểm tra: DD/MM/YYYY HH:mm; các nhóm khác;
+  99 - KÊNH LỖI ở cuối cùng.
+- File cuối: iptv.m3u. Kênh FAIL giữ nguyên URL nhưng chuyển xuống nhóm cuối.
+- Hẹn giờ 07:00 và 19:00 theo GIỜ ĐỊA PHƯƠNG CỦA MÁY (đổi được).
+- Đến giờ: KHÔNG hiện web GUI, hộp thoại, Terminal hay thông báo popup.
+- Có log để kiểm tra các lần chạy trong nền.
+
+AN TOÀN
+- Mặc định chỉ tạo file trên máy; KHÔNG tự đăng lên GitHub.
+- Nếu một nguồn M3U không tải được, giữ nguyên file iptv.m3u và Gist trước đó.
+- Nếu quá ít kênh OK / quá nhiều FAIL, không ghi đè iptv.m3u:
+  xuất iptv_can_kiem_tra.m3u để bạn xem lại và không đẩy lên GitHub.
+- UNKNOWN giữ nguyên nhóm và không bị xem là lỗi chết chắc chắn.
+- Tránh chạy đồng thời: có khóa tiến trình cho máy.
+- Nếu đã bật lịch cập nhật trong phiên bản cũ, tắt lịch cũ trước.
+- Gh CLI phải đăng nhập bằng đúng chủ Gist nếu muốn đăng.
+- Chỉ PATCH Gist cũ; KHÔNG tự tạo Gist mới.
+- GitHub có thể kiểm duyệt nội dung M3U; đảm bảo quyền phân phối trước khi đăng.
+
+CHẠY ĐẦU TIÊN
+- Mac: giải nén ZIP; mở Terminal trong thư mục, chạy bash INSTALL_MAC.command.
+- Windows: giải nén ZIP; mở INSTALL_WINDOWS.bat (cần Python 3 từ python.org).
+- Linux systemd: giải nén ZIP; chạy bash INSTALL_LINUX.sh.
+Cài xong, tác vụ được sao chép vào thư mục ổn định của tài khoản.
+Chương trình chạy nền theo hệ điều hành, KHÔNG cần mở thư mục ZIP nữa.
+Lưu ý: hệ điều hành phải bật và người dùng đã đăng nhập để tác vụ chạy.
+Máy tắt hoặc không có điện không thể chạy; macOS có thể chạy bù sau khi thức dậy.
+Linux systemd timer với Persistent=true cũng chạy bù khi user service hoạt động lại.
+
+QUẢN LÝ
+Trong thư mục chương trình sau khi giải nén, dùng:
+- Mac/Linux: python3 cli.py status
+- Windows: py -3 cli.py status
+- Chạy thử, không đăng GitHub: python3 cli.py run --no-publish
+- Đổi giờ: python3 cli.py config times '06:30,18:30'
+  XONG chạy: python3 cli.py reschedule
+- Bật tự cập nhật Gist (CHỈ khi đã xác minh tài khoản và hợp pháp):
+  python3 cli.py config publish on
+- Tắt đăng Gist: python3 cli.py config publish off
+- Xóa lịch tự chạy: python3 cli.py remove-schedule
+- Xem nguồn hiện có: python3 cli.py sources list
+- Thêm nguồn: python3 cli.py sources add 'https://example.org/new.m3u' 'Tên nguồn'
+- Xóa nguồn theo số: python3 cli.py sources remove 3
+- Dùng lại nguồn GUI/default: python3 cli.py sources reset
+Thay 'python3' bằng 'py -3' trên Windows.
+
+VỊ TRÍ FILE
+- Tùy chọn output_dir từ bản GUI, mặc định ở ~/Downloads.
+- iptv.m3u : kết quả đã kiểm tra và phân nhóm.
+- iptv_goc_chua_loc.m3u : bản gốc đủ kênh.
+- BAO_CAO_KENH_IPTV.csv : chi tiết 2-4 vòng kiểm tra từng kênh.
+- iptv_can_kiem_tra.m3u : bản cần xem lại nếu gặp quá nhiều lỗi.
+- ~/.iptv_studio/lite/run.log : nhật ký tự chạy (giữ tối đa 4 file quay vòng).
+- ~/.iptv_studio/lite/last_run.json : trạng thái lượt chạy gần nhất.
+- ~/.iptv_studio/lite_settings.json : cài đặt riêng Lite (không có mật khẩu).
+- ~/.iptv_studio/config.json : cấu hình chung với bản GUI 5.0 (đọc, không sửa).
+
+GIỚI HẠN
+- Bản Lite đóng gói bằng Python thuần; cần cài Python 3 (khuyến nghị >=3.9).
+- Mac: launchd chỉ chạy khi user session hoạt động; lúc ngủ sẽ không kiểm tra.
+- Windows: Scheduled Task chạy dưới tài khoản đã đăng nhập, dùng pythonw.exe
+  để không hiện hộp thoại khi chạy lịch; nếu Python bị gỡ hoặc đổi vị trí, phải cài lại lịch.
+- Linux: yêu cầu systemd --user. Lúc không đăng nhập sẽ không chạy nếu
+  chưa bật lingering; không cần root để cài lịch dùng khi đã đăng nhập.
+- Không bảo đảm stream xem được trên mọi ứng dụng/mạng: DRM, cookie, chặn vùng.
+- Đăng Gist cần gh CLI, xác thực từ trước; tác vụ chạy nền không tự mở trình duyệt đăng nhập.
+
+HƯỚNG DẪN CHI TIẾT: HUONG_DAN_MAC.txt / HUONG_DAN_WINDOWS.txt / HUONG_DAN_LINUX.txt
