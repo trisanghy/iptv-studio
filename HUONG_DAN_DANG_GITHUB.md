@@ -1,3 +1,5 @@
+> **Hiện tại:** Repository này đã Public và sử dụng giấy phép MIT. Script tạo repo Private dưới đây chỉ dành cho thao tác tạo kho mới.
+
 # Đưa mã nguồn lên GitHub bằng tài khoản `trisanghy`
 
 ## Trên Mac
@@ -32,4 +34,4 @@ Nó kiểm tra remote phải thuộc `trisanghy/iptv-studio` và chỉ `git push
 
 ## Quan trọng
 
-Không có lệnh nào trong bộ này tự đẩy lên GitHub từ môi trường ChatGPT. Bạn phải chạy trên máy đã đăng nhập GitHub. Repo Private giúp tránh công khai mã khi chưa rà soát. Không tái đăng tải playlist có vấn đề bản quyền lên tài khoản khác để né đình chỉ GitHub.
+Không có lệnh nào trong bộ này tự đẩy lên GitHub từ môi trường ChatGPT. Bạn phải chạy trên máy đã đăng nhập GitHub. Repository `trisanghy/iptv-studio` hiện đã **Public**, cấp phép mã nguồn theo MIT. Không chạy lại script tạo repository mới để thay thế repository hiện tại. Không tái đăng tải playlist có vấn đề bản quyền lên tài khoản khác để né đình chỉ GitHub.

@@ -7,7 +7,7 @@ Công cụ **quản lý, hợp nhất và kiểm tra playlist IPTV M3U**, gồm 
 
 **Mô tả repository:** Mã nguồn Python đa nền tảng cho công cụ gộp M3U, kiểm tra HLS/media, phân nhóm kênh lỗi, xuất `iptv.m3u` và cập nhật Gist tùy chọn.
 
-> Repo này chỉ chứa **mã nguồn và hướng dẫn**; không kèm playlist đã tổng hợp, token GitHub, mật khẩu hay kết quả quét kênh. Repo nên để ở chế độ **Private**. Các URL nguồn trong cấu hình mặc định có thể thuộc bên thứ ba; chỉ sử dụng hoặc chia sẻ nội dung khi bạn có quyền.
+> **Repository Public · MIT License.** Mã nguồn do chủ sở hữu có quyền cấp phép được phát hành theo [MIT](LICENSE). Repo chỉ chứa mã nguồn và hướng dẫn; không kèm token, mật khẩu, playlist tổng hợp hoặc dữ liệu cá nhân. Giấy phép này không cấp quyền đối với nội dung IPTV, logo hay các tài sản của bên thứ ba.
 
 ## Tính năng chính
 
@@ -123,4 +123,8 @@ Tài liệu gốc chi tiết nằm trong mỗi thư mục (`HUONG_DAN_*.txt`, `R
 
 ## Giấy phép
 
-Chưa gắn giấy phép nguồn mở. Repository mặc định là **Private**; chỉ chuyển sang Public và bổ sung giấy phép nếu chủ sở hữu lựa chọn và đã xác minh quyền đối với toàn bộ mã và tài nguyên liên quan.
+**MIT License — Copyright (c) 2026 trisanghy.**
+
+Cho phép sử dụng, sửa đổi, phân phối và sử dụng thương mại **mã nguồn mà chủ dự án có quyền cấp phép**, với điều kiện giữ thông báo bản quyền và giấy phép. Xem [LICENSE](LICENSE).
+
+Giấy phép mã nguồn không cấp quyền với luồng truyền hình, logo, playlist hoặc nội dung của bên thứ ba.
